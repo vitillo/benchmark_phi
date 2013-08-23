@@ -15,7 +15,7 @@ void gemm_fast(const scalar_t *A, const scalar_t *B, scalar_t *C, int nmat, int 
 	scalar_t *sub_C = C + base + i*N*nmat + j*nmat;
 
 #pragma unroll(4)
-#pragma vector unaligned
+#pragma vector aligned
 #pragma simd assert
 	for(int idx = 0; idx < block_size; idx++){
 	  C[idx] += A[idx]*B[idx];
