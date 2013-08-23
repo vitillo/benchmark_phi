@@ -30,12 +30,15 @@ void benchmark(){
 
   assert(nmat % block_size == 0); // Ideal use case
 
-#pragma omp parallel
-#pragma omp master
+// Compare 1 thread ICC vs 1 thread OpenCL + device fission
+// I am only interested in the quality of the generated assembly
+
+//#pragma omp parallel
+//#pragma omp master
   t0 = omp_get_wtime();
 
   for(int i = 0; i < iters; i++){
-#pragma omp parallel for
+//#pragma omp parallel for
     for(int z = 0; z < nmat; z+= block_size){
       gemm(A, B, C, dim, dim, dim, nmat, z, block_size);
     }
