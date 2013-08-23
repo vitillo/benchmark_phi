@@ -10,7 +10,7 @@ void gemm(const scalar_t *A, const scalar_t *B, scalar_t *C, int M, int N, int K
 	const scalar_t *sub_B = B + k*N*nmat + j*nmat;
 	scalar_t *sub_C = C + i*N*nmat + j*nmat;
 
-#pragma unroll(4)
+#pragma unroll(16)
 #pragma vector aligned
 #pragma simd assert
 	for(int idx = 0; idx < nmat; idx++){
