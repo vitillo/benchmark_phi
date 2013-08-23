@@ -14,7 +14,7 @@ void mxm(__global scalar_t *A, __global scalar_t *B, __global scalar_t *C, int M
   }
 }
 
-__kernel void benchmark(__global scalar_t *A, __global scalar_t *B, __global scalar_t *C, int M, int N, int K, int num, int iters){
+__kernel void gemm(__global scalar_t *A, __global scalar_t *B, __global scalar_t *C, int M, int N, int K, int num, int iters){
   const int idx = get_global_id(0);
 
   for(int i = 0; i < iters; i++){

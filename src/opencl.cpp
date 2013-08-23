@@ -129,7 +129,7 @@ int main(){
     cl::Buffer inB(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, nmat*dim*dim*sizeof(scalar_t), B);
     cl::Buffer outC(context, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, nmat*dim*dim*sizeof(scalar_t), C);
 
-    cl::Kernel kernel(program, "benchmark");
+    cl::Kernel kernel(program, "gemm");
     kernel.setArg(0, inA);
     kernel.setArg(1, inB);
     kernel.setArg(2, outC);
