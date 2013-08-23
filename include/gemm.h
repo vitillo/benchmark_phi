@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-void gemm(const scalar_t *A, const scalar_t *B, scalar_t *C, int M, int N, int K, int nmat, int base, int block_size);
+void gemm(const scalar_t *A, const scalar_t *B, scalar_t *C, int M, int N, int K, int nmat);
 
 template <int M, int N, int K>
 void gemm_fast(const scalar_t *A, const scalar_t *B, scalar_t *C, int nmat, int base, int block_size){
