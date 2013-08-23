@@ -15,6 +15,6 @@ else()
     set(use_double -DUSE_DOUBLE=${USE_DOUBLE})
 endif()
 
-add_definitions(-DALIGNMENT=${alignment} -DHAS_MATERIAL_EFFECTS=0 ${use_double})
+add_definitions(-DALIGNMENT=${alignment} ${use_double})
 
 add_executable(main src/main.cpp src/gemm.cpp)
